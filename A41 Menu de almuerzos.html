@@ -28,31 +28,30 @@
 
     <script>
         function realizarcompra(){
-            var opcionmenu=document.getElementById('menuAlmuerzo');
+            var opcionmenu=document.getElementById('menuAlmuerzo').value;
             var dinero=parseFloat(document.getElementById("Dinero").value);
             var vuelto=0;
-            
+            var preciomenu=0;
 
-            if(opcionmenu==="menu1"){
-                vuelto=(dinero - 25);
+            if(opcionmenu==='menu1'){
+                preciomenu=25;
+
+            }else if(opcionmenu==='menu2'){
+                preciomenu=20;
+
+            }else if(opcionmenu==='menu3'){
+                preciomenu=50;
+            }
+
+            if(dinero>=preciomenu){
+                vuelto=dinero-preciomenu;
                 document.getElementById('respuesta').innerHTML= 'COMPRA REALIZADA CON EXITO, VUELTO Q.'+ vuelto.toFixed(2);
                 document.getElementById('respuesta').style.color="green"
-                
-            }
-            else if(opcionmenu==='menu2'){
-                vuelto=(dinero - 20);
-                document.getElementById('respuesta').innerHTML= 'COMPRA REALIZADA CON EXITO, VUELTO Q.'+ vuelto.toFixed(2);
-                document.getElementById('respuesta').style.color="green"
-            }
-            else if(opcionmenu==='menu3'){
-                vuelto=(dinero - 50);
-                document.getElementById('respuesta').innerHTML= 'COMPRA REALIZADA CON EXITO, VUELTO Q.'+ vuelto.toFixed(2);
-                document.getElementById('respuesta').style.color="green"
-            }
-            else{
-                document.getElementById('respuesta').innerHTML= 'COMPRA NO REALIZADA'
+                document.getElementById('Dinero').value=vuelto.toFixed(2);                
+            } else {
+                document.getElementById('respuesta').innerHTML= 'LO SENTIMOS EL DINERO ES INSUFICIENTE PARA REALIZAR LA COMPRA'
                 document.getElementById('respuesta').style.color="red"
-            }            
+            }        
         }
 
 
