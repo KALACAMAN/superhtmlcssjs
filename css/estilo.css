@@ -1,0 +1,14 @@
+
+.btn{
+    background-color: #2aab47;
+    padding: 6px 3px;
+    display: block;
+    text-align: center;
+    color: #fff;
+    border-radius: 25px;
+    margin: 30px 40px 55px;
+    font-size: 35px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 0 8px 0 0 #20732f, 0 0 25px 5px #fff;
+ }

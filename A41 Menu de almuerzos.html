@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú de Almuerzos</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <h1>Menú de almuerzos</h1>
+    <br>
+    <label for="Dinero">Dinero: </label>
+    <input type="number" id="Dinero">
+    <br>
+    <br>
+    <label for="menuAlmuerzo">Seleccione un almuerzo: </label>
+    <select id="menuAlmuerzo">
+        <option value="menu1">Carne Asada - Q.25.00</option>
+        <option value="menu2">Pollo en Crema - Q.20.00</option>
+        <option value="menu3">Arroz de Lomito - Q.50.00</option>
+        <option value="nomenu" selected disabled style="display: none;">Elige</option>
+    </select>
+    <br>
+    <br>
+    <button class="btn" onclick="realizarcompra()">Comprar</button>
+
+    <h2 id="respuesta"></h2>
+
+    <script>
+        function realizarcompra(){
+            var opcionmenu=document.getElementById('menuAlmuerzo');
+            var dinero=parseFloat(document.getElementById("Dinero").value);
+            var vuelto=0;
+            
+
+            if(opcionmenu==="menu1"){
+                vuelto=(dinero-25);
+                document.getElementById('respuesta').innerHTML= 'COMPRA REALIZADA CON EXITO, VUELTO Q.'+ vuelto.toFixed(2);
+                document.getElementById('respuesta').style.color="green"
+                
+            }
+            else if(opcionmenu==='menu2'){
+                vuelto=(dinero-20);
+                document.getElementById('respuesta').innerHTML= 'COMPRA REALIZADA CON EXITO, VUELTO Q.'+ vuelto.toFixed(2);
+                document.getElementById('respuesta').style.color="green"
+            }
+            else if(opcionmenu==='menu3'){
+                vuelto=(dinero-50);
+                document.getElementById('respuesta').innerHTML= 'COMPRA REALIZADA CON EXITO, VUELTO Q.'+ vuelto.toFixed(2);
+                document.getElementById('respuesta').style.color="green"
+            }
+            else{
+                document.getElementById('respuesta').innerHTML= 'COMPRA NO REALIZADA'
+                document.getElementById('respuesta').style.color="red"
+            }            
+        }
+
+
+
+    </script>
+    
+</body>
+</html>
